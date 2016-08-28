@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+function refreshClub()
+{
+
+var choice = document.getElementById("hobby").value;
+if(choice=="sports")
+document.getElementById("innerHTMLtxt").textContent = "Baseball Team, Basketball Team or Softball Softball";
+else if(choice=="MDF")
+document.getElementById("innerHTMLtxt").textContent = "Sparta Music club, Contemporary Dance Group or canvas creators";
+else if(choice=="MathScience")
+document.getElementById("innerHTMLtxt").textContent = "Math club, ScienceGeeks";
+else if(choice=="other")
+document.getElementById("innerHTMLtxt").textContent = "Look out for various Student clubs in the foyer";
+}
+</script>
+
+<form>
+
+<h2>Select Student Club Memberships</h2>
+
+<h3>Select your interests and hobbies below</h3>
+
+<select name="hobby" id="hobby" onchange="alert('click Go to update the list below')">
+<option value="sports">Sports</option>
+<option value="MDF">Music, Dance and Fine Arts</option>
+<option value="MathScience">Math and Science</option>
+<option value="other">Everything else</option>
+</select>
+<input type="button" onclick="refreshClub()" value="Go!">
+</form>
+
+  <div id="innerHTMLtxt"></div>
+</body>
+</html>

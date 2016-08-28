@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>CMPE 273 Refresher - JS functions</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+<h1>Semester Tuition Calculator</h1>
+<h2> select course load</h2>
+<script>
+function calculateTuition(form,name)
+{
+//alert("inside function");
+
+  var courseoptions = form.elements[name];
+    var val; //variable to store number of courses chosen
+    // Using a loop to check which of the option was selected and assign it to val
+    for (var i=0, len=courseoptions.length; i<len; i++) {
+   // alert("inside loop");
+        if ( courseoptions[i].checked ) { // Is the option checked?
+            val = courseoptions[i].value; // if yes, the assign it to val
+            break; // come out of the loop
+        }
+    }
+    
+    if(val==3 || val == 4 ) //if first option
+    {
+    alert("You need to pay $"+ 300*val + " for " + val+ " courses");
+    }
+  //  else if(val==4) //if second option
+   // {
+   // alert("you need to pay $1200 (4x300) for 4 courses");
+  //  }
+    else // this means user didn't select either of the options
+        alert("please choose either 3 or 4 course option for the semester");
+
+}
+</script>
+
+<!--form to supply data to javascript-->
+<form id="tuitionForm">
+<input type="radio" name="nCourses" value = "3" id="3">3 courses (9 units, $300 per unit) <br>
+<input type="radio" name="nCourses" value = "4" id="4">4 courses (12 units, $300 per unit) <br>
+
+<input type="button" class="btn btn-primary" name="calculate" value="calculate my Tuition" onclick="calculateTuition(document.getElementById('tuitionForm'),'nCourses')">
+
+</form>
+
+
+
+</body>
+</html>

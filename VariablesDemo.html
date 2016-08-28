@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>273 - JS Variables Refresher</title>
+</head>
+<body>
+
+<script>
+
+function calculateTransport(){
+
+alert("inside function");
+
+var transitCost = 0, parkingCost = 0, totalCost=0;
+
+transitOptions = document.getElementsByClassName('modeoftransport');
+for(i=0;i<transitOptions.length;i++)
+{
+if(transitOptions[i].checked)
+{
+transitCost+=5;
+}
+
+}
+
+parkingOptions = document.getElementsByClassName('parkingtype');
+for(i=0;i<parkingOptions.length;i++)
+{
+if(parkingOptions[i].checked)
+{
+parkingCost+=10;
+}
+
+}
+
+totalCost = transitCost + parkingCost;
+alert("total cost is "+totalCost + "-(parking - " +parkingCost+ " and Transit - " + transitCost+" )");
+
+
+}
+</script>
+
+<h3>Select the transit options for commute plan</h3>
+
+<input type="checkbox" name="modeoftransport" class="modeoftransport" value = "vta bus"> VTA Bus <br>
+<input type="checkbox" name="modeoftransport" class="modeoftransport" value = "vta light rail"> VTA light rail <br>
+<input type="checkbox" name="modeoftransport" class="modeoftransport" value = "BART"> BART <br>
+
+<h3>Choose Parking plan</h3>
+<input type="checkbox" name="parkingtype" class="parkingtype" value = "fullday"> Full Day oncampus parking <br>
+<input type="checkbox" name="parkingtype"  class="parkingtype" value = "halfday"> Half Day oncampus parking (office hours only) <br>
+
+<input type="button" name="calculate transport" value="calculate Transport" onclick="calculateTransport()">
+</body>
+</html>

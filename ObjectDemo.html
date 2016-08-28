@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>273 - JS Objects Refresher</title>
+</head>
+<body>
+<script>
+function generateTransactionID(){
+
+var count = 100;
+
+var student = {'name':Name.value,'StudentId':sid.value,'department':department.value};
+var transactionid = 0;
+//if(localStorage.getItem("scount"))
+{
+//count = localStorage.getItem("scount");
+ transactionid= student.department+student.StudentId+count;
+count++;
+//localStorage.setItem("scount", count);
+}
+//else
+{
+transactionid= student.department+student.StudentId+count;
+count++;
+//localStorage.setItem("scount", count);
+}
+
+alert(transactionid);
+}
+</script>
+
+<label>Name</label><input type="text" name ="Name" id="Name">  <br>
+<label>Student Id</label><input type = "text" name ="sid" id="sid">  <br>
+<label> Department </label><input type = "text" name = "department" id="department"><br>
+
+<input type="button" value="Generate Transaction ID" onclick="generateTransactionID()">
+</body>
+</html>
