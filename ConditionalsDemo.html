@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+function displaylevels()
+{
+
+var years = document.getElementsByName("level");
+
+if(years[0].checked)
+{
+alert("undergrad");
+document.getElementById("Undergraduate").style.display = "block";
+
+}
+
+else if(years[1].checked)
+{
+alert("grad");
+document.getElementById("Graduate").style.display = "block";
+}
+}
+
+function calcundergrad()
+{
+alert("inside undergrad");
+var selectedyear = document.getElementById("yearofundergrad").value;
+//alert(selectedyear);
+
+switch(selectedyear)
+{
+
+case "junior" : alert(selectedyear); break;
+case "sophomore" : alert(selectedyear); break;
+case "freshman" : alert(selectedyear); break;
+case "senior" : alert(selectedyear); break;
+
+}
+}
+
+function calcgrad()
+{
+
+var selectedyear = document.getElementById("yearofgrad").value;
+
+if(selectedyear=="first")
+{
+alert("first graduate year");
+}
+else if(selectedyear=="second")
+{
+alert("second graduate year");
+}
+else
+alert("invalid grad year");
+}
+
+
+
+</script>
+
+<h3>Fill out the background history to decide tuition premium based on residency</h3>
+<label>Residency</label><br>
+<input type="radio" name="Status" value="Resident"> Resident <br>
+<input type="radio" name="Status" value="Nonresident">Non Resident / Out of state / International<br>
+
+<div id="levelofstudy" onclick="displaylevels()">
+<label>Level of Study</label><br>
+<input type="radio" name="level" value="Undergrad"> Undergraduate <br>
+<input type="radio" name="level" value="Graduate"> Graduate<br>
+</div>
+<div id="school year">
+
+<div id="Undergraduate" style="display:none">
+<select id="yearofundergrad">
+<option id="freshman" value="freshman">freshman </option>
+<option id="sophomore" value="sophomore">sophomore year</option>
+<option id="junior" value="junior">junior</option>
+<option id="senior" value="senior">senior</option>
+
+<input type="button" value="calcundergrad" name="Go!" onclick="calcundergrad()">
+
+</select>
+
+</div>
+<div id="Graduate" style="display:none">
+<select id="yearofgrad">
+<option id="first" value="first">First Year </option>
+<option id="second" value="second">Second Year</option>
+
+
+
+
+</select>
+<input type="button" value="calgrad" name="Go!" onclick="calcgrad()">
+</div>
+
+</div>
+
+
+</body>
+</html>
