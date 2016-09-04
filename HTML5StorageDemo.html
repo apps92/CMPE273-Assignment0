@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+if(sessionStorage.visits)
+{
+sessionStorage.visits = Number(sessionStorage.visits) +1;
+	}
+else{
+            sessionStorage.visits = 1;
+    }
+
+
+
+
+if(localStorage.visits)
+{
+localStorage.visits = Number(localStorage.visits) +1;
+	}
+else{
+            localStorage.visits = 1;
+    }
+
+
+
+function showAnswer(){
+
+document.getElementById("answer").style.display="block";
+
+document.getElementById("answertext").innerHTML= localStorage.visits+" visits in total";
+
+document.getElementById("answertext").innerHTML+= sessionStorage.visits+" visits in this session";
+
+}
+
+
+
+
+
+</script>
+
+<h3> The Dress Illusion</h3>
+<p> See the original image below and click on "Show me the answer" once you have made up your mind</p>
+<img src="img/The_Dress_(viral_phenomenon).png">
+
+<input type="button" name="Show me the Answer" value="Show me the Answer" onclick="showAnswer()">
+
+<div id="answer" style="display:none">
+
+<img src="img/bluedress-315-new.gif" align="center">
+
+<div id="answertext"></div>
+
+
+
+
+</div>
+
+
+
+
+
+
+</body>
+</html>
