@@ -1,35 +1,38 @@
 function displaylevels()
 {
-
 var years = document.getElementsByName("level");
-
 if(years[0].checked)
 {
-alert("undergrad");
 document.getElementById("Undergraduate").style.display = "block";
-
+document.getElementById("Graduate").style.display = "none";
 }
+
 
 else if(years[1].checked)
 {
-alert("grad");
 document.getElementById("Graduate").style.display = "block";
+document.getElementById("Undergraduate").style.display = "none";
 }
 }
 
 function calcundergrad()
 {
-alert("inside undergrad");
 var selectedyear = document.getElementById("yearofundergrad").value;
-//alert(selectedyear);
+var premium = 0;
+var status = document.getElementsByName("Status");
+
+if(status[0].checked)
+	{
+		 premium = 300;
+	}
 
 switch(selectedyear)
 {
 
-case "junior" : alert(selectedyear); break;
-case "sophomore" : alert(selectedyear); break;
-case "freshman" : alert(selectedyear); break;
-case "senior" : alert(selectedyear); break;
+case "junior" : alert(selectedyear+" with premium :" +premium); break;
+case "sophomore" : alert(selectedyear+" with premium :" +premium); break;
+case "freshman" : alert(selectedyear+" with premium :" +premium); break;
+case "senior" : alert(selectedyear+" with premium :" +premium); break;
 
 }
 }
