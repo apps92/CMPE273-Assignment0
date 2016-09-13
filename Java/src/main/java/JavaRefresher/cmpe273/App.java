@@ -50,14 +50,38 @@ public class App
 		case 3:
 			System.out.println("You have chosen option" + topicOfChoice+ "Array - Please read the problem statement below and press Enter to e the program else press b to go back to the main menu");
 			confirmChoice();
+			MyArrayImplementation obj3 = new MyArrayImplementation();
 			break;
 		case 4:
 			System.out.println("You have chosen option" + topicOfChoice+ "Interfaces - Please read the problem statement below and press Enter to e the program else press b to go back to the main menu");
 			confirmChoice();
+			MyInterfaceImplementation obj4 = new MyInterfaceImplementation(123, 706);
 			break;
 		case 5:
 			System.out.println("You have chosen option" + topicOfChoice+ "Collections - Please read the problem statement below and press Enter to e the program else press b to go back to the main menu");
 			confirmChoice();
+			int p=0;
+			String [] names = new String[5];
+		    String [] positions= new String[5];
+		    sc.nextLine();
+			System.out.println("Enter 5 names");
+			for(p =0;p<5;p++)
+			{
+			names[p]= 	sc.nextLine();
+			}
+			p=0;
+			System.out.println("Enter the 5 positions");
+			for( p=0;p<5;p++)
+			{
+				positions[p] = sc.nextLine();
+			}
+			
+			for(p=0;p<5;p++)
+			{
+				System.out.println(names[p]+positions[p]);
+			}
+			
+			MyCollectionsImplementation obj5 = new MyCollectionsImplementation(names, positions);
 			break;
 		case 6:
 			System.out.println("You have chosen option" + topicOfChoice+ "Generics - Please read the problem statement below and press Enter to e the program else press b to go back to the main menu");
