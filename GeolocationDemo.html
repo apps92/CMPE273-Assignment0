@@ -7,23 +7,22 @@
          function showLocation(position) {
             var latitude = position.coords.latitude;
             var longitude = position.coords.longitude;
-            alert("Latitude : " + latitude + " Longitude: " + longitude);
+         window.open("https://www.google.com/maps/@"+latitude+","+longitude+",2299m/data=!3m1!1e3!5m1!1e3");
          }
 
          function errorHandler(err) {
             if(err.code == 1) {
-               alert("Error: Access is denied!");
+               alert("Error: Your Device has restricted Location access");
             }
             
             else if( err.code == 2) {
-               alert("Error: Position is unavailable!");
+               alert("Error: Your Location Couldn't be captured!");
             }
          }
 			
          function getLocation(){
 
             if(navigator.geolocation){
-               // timeout at 60000 milliseconds (60 seconds)
                var options = {timeout:60000};
                navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
             }
@@ -39,7 +38,10 @@
    <body>
       
       <form>
-         <input type="button" onclick="getLocation();" value="Get Location"/>
+      <h2>Welcome to Geo 3D Maps</h2>
+      
+      <p> Lock your position by hitting Go and explore the terrain around you!
+         <input type="button" onclick="getLocation();" value="Get 3D Location"/>
       </form>
       
    </body>
