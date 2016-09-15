@@ -29,7 +29,7 @@ public class myQueueImplementation {
 	fanQueueTail = 0; //Similary, the first slot is also the last slot, unless someone comes in the queue to buy a ticket
 	currentFansinQueue = 0;
 	
-	String name, finalChoice;
+	String name, finalChoice,result;
 	int choice;
 	//boolean status = false;
 	
@@ -44,11 +44,10 @@ public class myQueueImplementation {
 			case 1:
 			System.out.println("Please enter your name: ");
 			name = sc1.nextLine();
-			this.enqueue(name);
-		//	status = true;
+			result = this.enqueue(name);
 			break;
 			case 2:
-			this.dequeue();
+		   result = this.dequeue();
 			break;
 			case 3:
 			this.show();
@@ -71,27 +70,31 @@ public class myQueueImplementation {
 	
 	}
 	
-	public void enqueue(String str){
+	public String enqueue(String str){
 		if(! isFull()){
 			fanQueueTail = fanQueueTail % fanQueue.length;
 			fanQueue[fanQueueTail++] = str;
 			currentFansinQueue++;
 			System.out.println("Thank you. You will be called when your turn comes up!");
+			return "Thank you. You will be called when your turn comes up!";
 		}
 		else
 			System.out.println("Uh Oh! The Queue is full! Please wait for few more mins!");
+		return "Uh Oh! The Queue is full! Please wait for few more mins!";
 		}
 	
-	public void dequeue(){
+	public String dequeue(){
 		if(! isEmpty()){
 			String item = fanQueue[fanQueuehead];
 			fanQueue[fanQueuehead++] = null;
 			currentFansinQueue--;
 			fanQueuehead = fanQueuehead % fanQueue.length;
 			System.out.println("Mr./Mrs. " + item + ". It's your turn to get  a reserved seated next! Please keep moving so all fans can enjoy the game");
+			return "Enjoy the game";
 		}
 		else
 			System.out.println("It seems the stand is currently empty, please be choose at your convinience");
+		 return "choose at your convinience";
 		}
 	
 	public void show(){

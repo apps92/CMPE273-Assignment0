@@ -2,29 +2,23 @@ package JavaRefresher.cmpe273;
 
 import junit.framework.TestCase;
 
-
 public class StackTest extends TestCase {
 
-	private myStackImplementation stack1,stack2;
-	
-	@Override
-	
-	protected void setUp() throws Exception {
-		super.setUp();
+	public void testPush() {
+		myStackImplementation m= new myStackImplementation(3);
 		
-		System.out.println("Setting up stack 1 and stack2");
-		 stack1 = new myStackImplementation(5);
-		 stack2 = new myStackImplementation(3);
+		assertEquals("Another Card added to your collection!", m.Push("Pickachu"));
+		
 	}
 
-	@Override
-	protected void tearDown() throws Exception {
-		super.tearDown();
-		System.out.println("Tearing down");
-		this.stack1 = null;
-		this.stack2 = null;
+	public void testPop() {
+		myStackImplementation n= new myStackImplementation(3);
+		n.Push("Student1");
+		n.Push("Student2");
+		assertNotNull(n.pop());//Should Pop 2nd Student
+		assertNotNull(n.pop()); //Should Pop 1st Student
+				
 	}
-	
-	
+
 
 }

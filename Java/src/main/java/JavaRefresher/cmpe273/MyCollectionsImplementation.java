@@ -17,7 +17,7 @@ public class MyCollectionsImplementation {
 	public MyCollectionsImplementation(String [] names, String [] positions){
 		for(int j=0;j<5;j++)
 		{
-			System.out.println("Received"+names[j]+positions[j]);
+			//System.out.println("Received"+names[j]+positions[j]);
 		}
 	for(int i=0;i<5;i++)
 	{
@@ -28,7 +28,7 @@ public class MyCollectionsImplementation {
 		myPlayer.setPlayerName(names[i]);
 		myPlayer.setPositions(positions[i]);
 		mySquad.add(myPlayer);
-		System.out.println("Added :"+i+myPlayer.getPlayerName());
+		//System.out.println("Added :"+i+myPlayer.getPlayerName());
 			}
 	
 	do{
@@ -93,7 +93,7 @@ public class MyCollectionsImplementation {
 				if(playerToBeAdded.getPlayerName().equalsIgnoreCase(fname));
 				{
 					finalTeam.put(playerToBeAdded.getPositions(), playerToBeAdded);
-				System.out.println(fname+ " Added!");
+				//System.out.println(fname+ " Added!");
 				}				
 			}
 			

@@ -83,14 +83,7 @@ public class App
 			
 			MyCollectionsImplementation obj5 = new MyCollectionsImplementation(names, positions);
 			break;
-		case 6:
-			System.out.println("You have chosen option" + topicOfChoice+ "Generics - Please read the problem statement below and press Enter to e the program else press b to go back to the main menu");
-			confirmChoice();
-			break;
-		case 7:
-			System.out.println("You have chosen option" + topicOfChoice+ "Multithreading - Please read the problem statement below and press Enter to e the program else press b to go back to the main menu");
-			confirmChoice();
-			break;
+		
 		default:
 			break;
 		}
@@ -110,8 +103,7 @@ public class App
         System.out.println("3.Array - ");
         System.out.println("4.Interfaces -");
         System.out.println("5.Collecions - ");
-        System.out.println("6.Generics -");
-        System.out.println("7.Multithreading - ");
+       
     }
    static void confirmChoice()
    {
